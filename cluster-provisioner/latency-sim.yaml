@@ -1,0 +1,51 @@
+# tc-latency-simulator.yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: latency-simulator
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: latency-simulator
+  template:
+    metadata:
+      labels:
+        app: latency-simulator
+    spec:
+      nodeSelector:
+        simulate-zone: "us-east-1a"
+      hostNetwork: true
+      containers:
+        - name: tc
+          # This image is guaranteed to contain the full iproute2 package (tc)
+          image: nicolaka/netshoot:latest
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo "=== Configuring Network Emulator ==="
+              
+              # Delete any preexisting rules to prevent collision errors
+              tc qdisc del dev ens5 root 2>/dev/null
+              
+              # Apply the latency simulation rule.
+              # If it fails, the script will echo the error and won't lie about success.
+              if tc qdisc add dev ens5 root netem delay 80ms 5ms distribution normal; then
+                echo "Successfully added 80ms delay (±5ms jitter) on interface ens5"
+              else
+                echo "CRITICAL: Failed to apply traffic control rule."
+              fi
+              
+              # Keep the container running in the background
+              sleep infinity
+          securityContext:
+            privileged: true
+            capabilities:
+              add: ["NET_ADMIN"]
+          resources:
+            requests:
+              cpu: 1m
+              memory: 4Mi
+            limits:
+              cpu: 10m
+              memory: 16Mi

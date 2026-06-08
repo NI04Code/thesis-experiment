@@ -1,0 +1,15 @@
+# goldpinger-scrape.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: goldpinger
+  namespace: monitoring
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: goldpinger
+  podMetricsEndpoints:
+    - port: http
+      interval: 30s
