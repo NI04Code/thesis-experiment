@@ -43,6 +43,17 @@ To evaluate network locality, deploy Prometheus using Helm to collect latency me
 * **Cordon** `worker-6` so the descheduler and test workloads do not get scheduled on it.
 
 ```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install prometheus prometheus-community/prometheus \
+  --namespace monitoring --create-namespace \
+  --set alertmanager.enabled=false \
+  --set pushgateway.enabled=false \
+  --set kube-state-metrics.enabled=false \
+  --set prometheus-node-exporter.enabled=false \
+  --set server.nodeSelector.kubernetes\\.io/hostname=<name-of-worker-6>
+
 kubectl cordon <name-of-worker-6>
 ```
 Once Prometheus is running, apply the scraping configuration for Goldpinger:
