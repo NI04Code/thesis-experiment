@@ -125,4 +125,4 @@ Wait for the descheduling pass to complete and workloads to stabilize, then run 
 ```bash
 bash test-script/analyze.sh
 ```
-The table output will display the Evicted Pod Count, Standard Deviation changes, Mean RII changes, and Average Latency Degradation across the cluster.
+The table output will display the Evicted Pod Count, Standard Deviation changes, Stranding Score changes, and Average Latency Degradation across the cluster.

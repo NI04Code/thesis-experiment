@@ -10,7 +10,7 @@ print_table() {
   echo "Goal: $goal"
   
   printf "%-24s | %4s | %18s | %18s | %16s | %6s | %22s | %s\n" \
-    "Scenario" "Evic" "CPU_StdDev" "MEM_StdDev" "Mean_RII" "Active" "AvgLatency" "SDegraded"
+    "Scenario" "Evic" "CPU_StdDev" "MEM_StdDev" "Stranding_S" "Active" "AvgLatency" "SDegraded"
   printf -- "%.0s-" {1..134}; echo
 
   shopt -s nullglob
@@ -33,12 +33,12 @@ print_table() {
 
       local UC_BEFORE=$(grep -oP 'cpu_stddev=\K[0-9.]+' "$clean_d/before_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "?")
       local UM_BEFORE=$(grep -oP 'mem_stddev=\K[0-9.]+' "$clean_d/before_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "?")
-      local RII_BEFORE=$(grep -oP 'mean_rii=\K[0-9.]+' "$clean_d/before_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "?")
+      local RII_BEFORE=$(grep -oP 'total_rii=\K[0-9.]+' "$clean_d/before_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "?")
       local L_BEFORE=$(grep "avg=" "$clean_d/before_cost.txt" 2>/dev/null | grep -oP 'avg=\K[0-9.]+' | tr -d '\r\n' || echo "?")
       
       local UC=$(grep -oP 'cpu_stddev=\K[0-9.]+' "$clean_d/after_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "N/A")
       local UM=$(grep -oP 'mem_stddev=\K[0-9.]+' "$clean_d/after_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "N/A")
-      local RII=$(grep -oP 'mean_rii=\K[0-9.]+' "$clean_d/after_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "N/A")
+      local RII=$(grep -oP 'total_rii=\K[0-9.]+' "$clean_d/after_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "N/A")
       local ACT=$(grep -oP 'ActiveNodes=\K[0-9]+' "$clean_d/after_node_util.txt" 2>/dev/null | tr -d '\r\n' || echo "N/A")
       local L=$(grep "avg=" "$clean_d/after_cost.txt" 2>/dev/null | grep -oP 'avg=\K[0-9.]+' | tr -d '\r\n' || echo "N/A")
       local CR=$(grep -E "worker-481|worker-930" "$clean_d/after_group.txt" 2>/dev/null | wc -l | tr -d ' \r\n')

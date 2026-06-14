@@ -93,14 +93,14 @@ for node in sorted(nodes, key=lambda n: n["metadata"]["name"]):
 cpu_mean, cpu_sd = stddev(cpu_utils)
 mem_mean, mem_sd = stddev(mem_utils)
 
-# Calculate Mean RII
+# Calculate Total RII
 rii_list = [abs(c - m) for c, m in zip(cpu_utils, mem_utils)]
-mean_rii = sum(rii_list) / len(rii_list) if rii_list else 0
+total_rii = sum(rii_list)
 
 print(f"\nDefragmentation (all nodes, N={len(cpu_utils)}):")
 print(f"  CPU:    mean={cpu_mean:.1f}%  cpu_stddev={cpu_sd:.1f}%")
 print(f"  Memory: mean={mem_mean:.1f}%  mem_stddev={mem_sd:.1f}%")
-print(f"  Mean RII: mean_rii={mean_rii:.1f}%")
+print(f"  Stranding Score: total_rii={total_rii:.3f}")
 print(f"  ActiveNodes={active_nodes_count} (nodes with non-DaemonSet workload requests)")
 PY
 
