@@ -90,6 +90,24 @@ kubectl apply -f cluster-provisioner/latency-sim.yaml
 
 ## Running the Tests
 
+The `test-script/` directory now contains multiple experiment suites:
+
+```text
+test-script/
+  actual-usage-evictor/
+    resource-defragmentation/
+    highnodeutilization/
+    lownodeutilization/
+    shared/
+    results/
+  resource-defragmentation/
+  run-session*.sh
+```
+
+- `test-script/actual-usage-evictor/` is the current actual-usage experiment suite. It separates the three strategies into Resource Defragmentation (R), HighNodeUtilization (H), and LowNodeUtilization (L), with common workload, k6, Kubernetes manifests, and utility scripts under `shared/`.
+- `test-script/resource-defragmentation/` is the standalone Resource Defragmentation comparison suite from the earlier experiment flow.
+- The root-level `test-script/run-session*.sh` scripts are the older session-based tests that use generated configs.
+
 ### 9. Deploy Descheduler Service Account
 Apply the default Kubernetes Descheduler ServiceAccount and ClusterRole.
 **Crucial Step:** You must edit the `ClusterRole` permissions for the descheduler to explicitly allow reading `PersistentVolumeClaims` (`pvc`), as the defragmentation and predictive target logic requires it.
@@ -101,8 +119,8 @@ python3 test-script/generate_configs.py
 ```
 *(You can modify the configurations directly within `generate_configs.py` before running it).*
 
-### 11. Execute Test Sessions
-Use the provided scripts to evaluate specific scenarios. Each script resets the cluster state, populates the workloads, and triggers the descheduler.
+### 11. Execute Legacy Test Sessions
+Use the root-level scripts to evaluate the original generated-config scenarios. Each script resets the cluster state, populates the workloads, and triggers the descheduler.
 
 * **LowNodeUtilization Test**: 
   ```bash
@@ -126,3 +144,68 @@ Wait for the descheduling pass to complete and workloads to stabilize, then run 
 bash test-script/analyze.sh
 ```
 The table output will display the Evicted Pod Count, Standard Deviation changes, Stranding Score changes, and Average Latency Degradation across the cluster.
+
+---
+
+## Actual Usage Evictor Suite
+
+The actual-usage suite lives in `test-script/actual-usage-evictor/`. Run commands from that directory:
+
+```bash
+cd test-script/actual-usage-evictor
+```
+
+Common assets are shared:
+
+- `shared/scripts/`: cleanup, preflight, snapshots, descheduler job runner, metrics summary, wait helpers.
+- `shared/k6/api-load.js`: API load generator used by R/H/L experiments.
+- `shared/k8s/`: common RBAC and Service manifests.
+- `results/`: normalized result location for all three experiments.
+
+### Resource Defragmentation (R)
+
+```bash
+export WORKLOAD_IMAGE="docker.io/matthewhjt/workload-http:actual-usage-v1"
+export DESCHEDULER_IMAGE="docker.io/matthewhjt/descheduler-custom:actual-usage-v1"
+
+./resource-defragmentation/scripts/run-r0-with-load.sh
+./resource-defragmentation/scripts/run-r1-with-load.sh
+```
+
+Results are written to `results/resource-defragmentation/`.
+
+### HighNodeUtilization (H)
+
+HNU temporarily configures the control-plane scheduler to use the MostAllocated profile. Run this only on the control plane, with passwordless `sudo` available for scheduler manifest updates.
+
+```bash
+./highnodeutilization/scripts/run-h0-with-load.sh
+./highnodeutilization/scripts/run-h1-with-load.sh
+```
+
+Restore the default scheduler before running experiments that require it:
+
+```bash
+./highnodeutilization/scripts/restore-scheduler.sh
+```
+
+Results are written to `results/highnodeutilization/`.
+
+### LowNodeUtilization (L)
+
+LNU expects the default scheduler. Its setup script detects the HNU scheduler config and restores it through `highnodeutilization/scripts/restore-scheduler.sh` when needed.
+
+```bash
+./lownodeutilization/scripts/run-l0-with-load.sh
+./lownodeutilization/scripts/run-l1-with-load.sh
+```
+
+Results are written to `results/lownodeutilization/`.
+
+More detailed notes are in each suite's `PLAN.md` and `WALKTHROUGH.md` files.
+
+---
+
+## Standalone Resource Defragmentation Suite
+
+The older standalone Resource Defragmentation suite remains under `test-script/resource-defragmentation/`. It has its own scenarios, scheduler config, descheduler policy files, parser, and result directory. See `test-script/resource-defragmentation/README.md` for the scenario walkthrough and aggregation commands.
