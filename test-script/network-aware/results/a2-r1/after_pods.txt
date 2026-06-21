@@ -1,0 +1,12 @@
+NAME                           READY   STATUS    RESTARTS   AGE   IP             NODE         NOMINATED NODE   READINESS GATES
+payment-7ddbcc8745-64nw9       1/1     Running   0          68s   10.244.2.178   worker-235   <none>           <none>
+payment-7ddbcc8745-k669m       1/1     Running   0          68s   10.244.2.181   worker-235   <none>           <none>
+payment-7ddbcc8745-lkhp2       1/1     Running   0          68s   10.244.2.179   worker-235   <none>           <none>
+payment-7ddbcc8745-td976       1/1     Running   0          48s   10.244.5.27    worker-481   <none>           <none>
+payment-7ddbcc8745-gndnp       1/1     Running   0          68s   10.244.1.224   worker-585   <none>           <none>
+payment-7ddbcc8745-qx65r       1/1     Running   0          68s   10.244.1.226   worker-585   <none>           <none>
+db-768dc78d4b-kp8l9            1/1     Running   0          83s   10.244.3.46    worker-861   <none>           <none>
+payment-7ddbcc8745-nprgp       1/1     Running   0          48s   10.244.3.48    worker-861   <none>           <none>
+transaction-64c84b7df7-66gqc   1/1     Running   0          83s   10.244.3.45    worker-861   <none>           <none>
+transaction-64c84b7df7-tqxkx   1/1     Running   0          83s   10.244.3.47    worker-861   <none>           <none>
+payment-7ddbcc8745-mn2bk       1/1     Running   0          49s   10.244.4.62    worker-930   <none>           <none>

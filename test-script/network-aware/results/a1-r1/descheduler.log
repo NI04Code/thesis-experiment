@@ -1,0 +1,71 @@
+I0605 11:58:35.172248       1 feature_gate.go:466] feature gates: {map[]}
+I0605 11:58:35.278304       1 secure_serving.go:57] Forcing use of http/1.1 only
+I0605 11:58:35.279581       1 named_certificates.go:53] "Loaded SNI cert" index=0 certName="self-signed loopback" certDetail="\"apiserver-loopback-client@1780660715\" [serving] validServingFor=[apiserver-loopback-client] issuer=\"apiserver-loopback-client-ca@1780660715\" (2026-06-05 10:58:35 +0000 UTC to 2029-06-05 10:58:35 +0000 UTC (now=2026-06-05 11:58:35.278834684 +0000 UTC))"
+I0605 11:58:35.279642       1 secure_serving.go:211] Serving securely on [::]:10258
+I0605 11:58:35.279714       1 tlsconfig.go:243] "Starting DynamicServingCertificateController"
+I0605 11:58:35.280827       1 tracing.go:88] Did not find a trace collector endpoint defined. Switching to NoopTraceProvider
+I0605 11:58:35.285254       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+I0605 11:58:35.285287       1 envvar.go:172] "Feature gate default state" feature="InOrderInformersBatchProcess" enabled=true
+I0605 11:58:35.285295       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=true
+I0605 11:58:35.285301       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=true
+I0605 11:58:35.285306       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+I0605 11:58:35.285311       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+I0605 11:58:35.915918       1 reflector.go:367] "Starting reflector" type="*v1.Pod" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:35.915946       1 reflector.go:411] "Listing and watching" type="*v1.Pod" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:35.916062       1 reflector.go:367] "Starting reflector" type="*v1.Node" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:35.916087       1 reflector.go:411] "Listing and watching" type="*v1.Node" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:35.918075       1 reflector.go:367] "Starting reflector" type="*v1.PersistentVolumeClaim" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:35.918094       1 reflector.go:411] "Listing and watching" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.083254       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=1 duration="165.132221ms"
+I0605 11:58:36.083297       1 reflector.go:446] "Caches populated" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.162179       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=8 duration="246.046338ms"
+I0605 11:58:36.162222       1 reflector.go:446] "Caches populated" type="*v1.Node" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.235942       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=45 duration="319.965399ms"
+I0605 11:58:36.236174       1 reflector.go:446] "Caches populated" type="*v1.Pod" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.319173       1 descheduler.go:235] Resetting pod evictor counters
+I0605 11:58:36.319484       1 lownodeutilization.go:191] "Node is unschedulable, thus not considered as underutilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-286"
+I0605 11:58:36.319572       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="underutilized" node="worker-481" usage={"cpu":"106m","memory":"70Mi","pods":"5"} usagePercentage={"cpu":5,"memory":9,"pods":5}
+I0605 11:58:36.319657       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="underutilized" node="worker-930" usage={"cpu":"106m","memory":"70Mi","pods":"5"} usagePercentage={"cpu":5,"memory":9,"pods":5}
+I0605 11:58:36.319746       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="overutilized" node="worker-235" usage={"cpu":"1105m","memory":"322Mi","pods":"7"} usagePercentage={"cpu":55,"memory":40,"pods":6}
+I0605 11:58:36.319793       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="overutilized" node="worker-585" usage={"cpu":"1205m","memory":"522Mi","pods":"8"} usagePercentage={"cpu":60,"memory":64,"pods":7}
+I0605 11:58:36.319821       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-861" usage={"cpu":"755m","memory":"312Mi","pods":"6"} usagePercentage={"cpu":38,"memory":38,"pods":5}
+I0605 11:58:36.319842       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="controlplane" usage={"cpu":"950m","memory":"290Mi","pods":"8"} usagePercentage={"cpu":48,"memory":8,"pods":7}
+I0605 11:58:36.319859       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-286" usage={"cpu":"175m","memory":"366Mi","pods":"5"} usagePercentage={"cpu":9,"memory":45,"pods":5}
+I0605 11:58:36.319877       1 lownodeutilization.go:254] "Criteria for a node under utilization" plugin="LowNodeUtilization" ExtensionPoint="Balance" cpu="20.00%" memory="20.00%"
+I0605 11:58:36.320773       1 lownodeutilization.go:255] "Number of underutilized nodes" plugin="LowNodeUtilization" ExtensionPoint="Balance" totalNumber=2
+I0605 11:58:36.320787       1 lownodeutilization.go:256] "Criteria for a node above target utilization" plugin="LowNodeUtilization" ExtensionPoint="Balance" cpu="50.00%" memory="50.00%"
+I0605 11:58:36.320797       1 lownodeutilization.go:257] "Number of overutilized nodes" plugin="LowNodeUtilization" ExtensionPoint="Balance" totalNumber=2
+I0605 11:58:36.320820       1 nodeutilization.go:186] "Total capacity to be moved" CPU=1788 Mem=703868928 Pods=210
+I0605 11:58:36.320833       1 nodeutilization.go:194] "Evicting pods from node" node="worker-585" usage={"cpu":"1205m","memory":"522Mi","pods":"8"}
+I0605 11:58:36.320875       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/metrics-server-6cbd6b9dd4-xcxk7" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction]"
+I0605 11:58:36.320897       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="monitoring/goldpinger-4l4l4" checks="daemonset pods are protected against eviction"
+I0605 11:58:36.320918       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/kube-proxy-mjvlv" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 11:58:36.320942       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-flannel/kube-flannel-ds-pf4ms" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 11:58:36.320959       1 nodeutilization.go:201] "Pods on node" node="worker-585" allPods=8 nonRemovablePods=4 removablePods=4
+I0605 11:58:36.320970       1 nodeutilization.go:217] "Evicting pods based on priority, if they have same priority, they'll be evicted based on QoS tiers"
+I0605 11:58:36.321129       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-q696n" node="worker-861"
+I0605 11:58:36.419115       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-q696n" reason="" strategy="LowNodeUtilization" node="worker-585" profile="low-baseline"
+I0605 11:58:36.419828       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-q696n"
+I0605 11:58:36.419850       1 nodeutilization.go:356] "Updated node usage" node="worker-585" CPU=955 Mem=480247808 Pods=7
+I0605 11:58:36.419956       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-sdw85" node="worker-861"
+I0605 11:58:36.520497       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-sdw85" reason="" strategy="LowNodeUtilization" node="worker-585" profile="low-baseline"
+I0605 11:58:36.520547       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-sdw85"
+I0605 11:58:36.520559       1 nodeutilization.go:356] "Updated node usage" node="worker-585" CPU=705 Mem=413138944 Pods=6
+I0605 11:58:36.520576       1 nodeutilization.go:194] "Evicting pods from node" node="worker-235" usage={"cpu":"1105m","memory":"322Mi","pods":"7"}
+I0605 11:58:36.520621       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="monitoring/goldpinger-24mxm" checks="daemonset pods are protected against eviction"
+I0605 11:58:36.520644       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-flannel/kube-flannel-ds-ltk6x" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 11:58:36.520698       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/kube-proxy-4zksd" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 11:58:36.520717       1 nodeutilization.go:201] "Pods on node" node="worker-235" allPods=7 nonRemovablePods=3 removablePods=4
+I0605 11:58:36.520738       1 nodeutilization.go:217] "Evicting pods based on priority, if they have same priority, they'll be evicted based on QoS tiers"
+I0605 11:58:36.520793       1 node.go:189] "Pod does not fit on node" pod="test-app/payment-7ddbcc8745-zvmb7" node="worker-286" err="node is not schedulable"
+I0605 11:58:36.520865       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-zvmb7" node="worker-481"
+I0605 11:58:36.626919       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-zvmb7" reason="" strategy="LowNodeUtilization" node="worker-235" profile="low-baseline"
+I0605 11:58:36.626981       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-zvmb7"
+I0605 11:58:36.626995       1 nodeutilization.go:356] "Updated node usage" node="worker-235" CPU=855 Mem=270532608 Pods=6
+I0605 11:58:36.627179       1 profile.go:425] "Total number of evictions/requests" extension point="Balance" evictedPods=3 evictionRequests=0
+I0605 11:58:36.627204       1 descheduler.go:252] "Number of evictions/requests" totalEvicted=3 evictionRequests=0
+E0605 11:58:36.627323       1 event_broadcaster.go:279] "Unable to write event (may retry after sleeping)" err="client rate limiter Wait returned an error: context canceled"
+I0605 11:58:36.627453       1 reflector.go:373] "Stopping reflector" type="*v1.Pod" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.627490       1 reflector.go:373] "Stopping reflector" type="*v1.Node" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.627514       1 reflector.go:373] "Stopping reflector" type="*v1.PersistentVolumeClaim" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 11:58:36.627803       1 tlsconfig.go:258] "Shutting down DynamicServingCertificateController"

@@ -1,0 +1,112 @@
+I0605 12:00:15.680962       1 feature_gate.go:466] feature gates: {map[]}
+I0605 12:00:15.975267       1 secure_serving.go:57] Forcing use of http/1.1 only
+I0605 12:00:15.975644       1 named_certificates.go:53] "Loaded SNI cert" index=0 certName="self-signed loopback" certDetail="\"apiserver-loopback-client@1780660815\" [serving] validServingFor=[apiserver-loopback-client] issuer=\"apiserver-loopback-client-ca@1780660815\" (2026-06-05 11:00:15 +0000 UTC to 2029-06-05 11:00:15 +0000 UTC (now=2026-06-05 12:00:15.975603928 +0000 UTC))"
+I0605 12:00:15.975680       1 secure_serving.go:211] Serving securely on [::]:10258
+I0605 12:00:15.975696       1 tracing.go:88] Did not find a trace collector endpoint defined. Switching to NoopTraceProvider
+I0605 12:00:15.975742       1 tlsconfig.go:243] "Starting DynamicServingCertificateController"
+I0605 12:00:15.975997       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+I0605 12:00:15.976013       1 envvar.go:172] "Feature gate default state" feature="InOrderInformersBatchProcess" enabled=true
+I0605 12:00:15.976018       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=true
+I0605 12:00:15.976022       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=true
+I0605 12:00:15.976027       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+I0605 12:00:15.976030       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+I0605 12:00:16.558620       1 latency_client.go:114] "No latency metrics configured, using topology-based cost provider"
+I0605 12:00:16.558871       1 reflector.go:367] "Starting reflector" type="*v1.Node" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.558900       1 reflector.go:411] "Listing and watching" type="*v1.Node" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.559223       1 reflector.go:367] "Starting reflector" type="*v1.PersistentVolumeClaim" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.559239       1 reflector.go:411] "Listing and watching" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.559561       1 reflector.go:367] "Starting reflector" type="*v1.Pod" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.559578       1 reflector.go:411] "Listing and watching" type="*v1.Pod" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.637757       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=8 duration="78.821186ms"
+I0605 12:00:16.637810       1 reflector.go:446] "Caches populated" type="*v1.Node" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.640480       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=1 duration="81.216798ms"
+I0605 12:00:16.640517       1 reflector.go:446] "Caches populated" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.847628       1 reflector.go:978] "Exiting watch because received the bookmark that marks the end of initial events stream" reflector="k8s.io/client-go/informers/factory.go:161" totalItems=45 duration="288.02131ms"
+I0605 12:00:16.848165       1 reflector.go:446] "Caches populated" type="*v1.Pod" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:16.859325       1 descheduler.go:235] Resetting pod evictor counters
+I0605 12:00:16.859681       1 lownodeutilization.go:191] "Node is unschedulable, thus not considered as underutilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-286"
+I0605 12:00:16.859728       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="underutilized" node="worker-481" usage={"cpu":"106m","memory":"70Mi","pods":"5"} usagePercentage={"cpu":5,"memory":9,"pods":5}
+I0605 12:00:16.859913       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="underutilized" node="worker-930" usage={"cpu":"106m","memory":"70Mi","pods":"5"} usagePercentage={"cpu":5,"memory":9,"pods":5}
+I0605 12:00:16.859958       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="overutilized" node="worker-235" usage={"cpu":"1105m","memory":"322Mi","pods":"7"} usagePercentage={"cpu":55,"memory":40,"pods":6}
+I0605 12:00:16.859981       1 lownodeutilization.go:216] "Node has been classified" plugin="LowNodeUtilization" ExtensionPoint="Balance" category="overutilized" node="worker-585" usage={"cpu":"1205m","memory":"522Mi","pods":"8"} usagePercentage={"cpu":60,"memory":64,"pods":7}
+I0605 12:00:16.860003       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="controlplane" usage={"cpu":"950m","memory":"290Mi","pods":"8"} usagePercentage={"cpu":48,"memory":8,"pods":7}
+I0605 12:00:16.860019       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-286" usage={"cpu":"175m","memory":"366Mi","pods":"5"} usagePercentage={"cpu":9,"memory":45,"pods":5}
+I0605 12:00:16.860034       1 lownodeutilization.go:242] "Node is appropriately utilized" plugin="LowNodeUtilization" ExtensionPoint="Balance" node="worker-861" usage={"cpu":"755m","memory":"312Mi","pods":"6"} usagePercentage={"cpu":38,"memory":38,"pods":5}
+I0605 12:00:16.860048       1 lownodeutilization.go:254] "Criteria for a node under utilization" plugin="LowNodeUtilization" ExtensionPoint="Balance" cpu="20.00%" memory="20.00%"
+I0605 12:00:16.860074       1 lownodeutilization.go:255] "Number of underutilized nodes" plugin="LowNodeUtilization" ExtensionPoint="Balance" totalNumber=2
+I0605 12:00:16.860085       1 lownodeutilization.go:256] "Criteria for a node above target utilization" plugin="LowNodeUtilization" ExtensionPoint="Balance" cpu="50.00%" memory="50.00%"
+I0605 12:00:16.860095       1 lownodeutilization.go:257] "Number of overutilized nodes" plugin="LowNodeUtilization" ExtensionPoint="Balance" totalNumber=2
+I0605 12:00:16.860114       1 nodeutilization.go:186] "Total capacity to be moved" CPU=1788 Mem=703868928 Pods=210
+I0605 12:00:16.860127       1 nodeutilization.go:194] "Evicting pods from node" node="worker-585" usage={"cpu":"1205m","memory":"522Mi","pods":"8"}
+I0605 12:00:16.860165       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-flannel/kube-flannel-ds-pf4ms" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 12:00:16.860194       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/kube-proxy-mjvlv" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 12:00:16.860214       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="monitoring/goldpinger-4l4l4" checks="daemonset pods are protected against eviction"
+I0605 12:00:16.860229       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/metrics-server-6cbd6b9dd4-xcxk7" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction]"
+I0605 12:00:16.860244       1 nodeutilization.go:201] "Pods on node" node="worker-585" allPods=8 nonRemovablePods=4 removablePods=4
+I0605 12:00:16.860253       1 nodeutilization.go:217] "Evicting pods based on priority, if they have same priority, they'll be evicted based on QoS tiers"
+I0605 12:00:16.860373       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-2ff28" node="worker-861"
+I0605 12:00:16.860409       1 networkcost_evictor.go:131] "NetworkCostEvictor PreEvictionFilter called" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-2ff28" node="worker-585"
+I0605 12:00:16.860419       1 networkcost_evictor.go:147] "Pod has network-group label" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-2ff28" group="checkout-flow"
+I0605 12:00:16.860434       1 networkcost.go:159] "ShouldAllowEviction: evaluating pod" pod="test-app/payment-7ddbcc8745-2ff28" group="checkout-flow" candidateNodes=7
+I0605 12:00:16.860446       1 networkcost.go:165] "Filtering out unschedulable candidate" node="controlplane"
+I0605 12:00:16.860459       1 networkcost.go:165] "Filtering out unschedulable candidate" node="worker-286"
+I0605 12:00:16.860470       1 networkcost.go:170] "ShouldAllowEviction: filtered candidates" pod="test-app/payment-7ddbcc8745-2ff28" total=7 schedulable=5
+I0605 12:00:16.860521       1 networkcost.go:109] "FindDependencyPods result" pod="test-app/payment-7ddbcc8745-2ff28" group="checkout-flow" depCount=3 nodesScanned=7 excludeSameOwner=true
+I0605 12:00:16.860534       1 networkcost.go:178] "ShouldAllowEviction: found dependency pods" pod="test-app/payment-7ddbcc8745-2ff28" depCount=3
+I0605 12:00:16.860549       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-2ff28" candidate="worker-861" candidateCost=0 currentCost=15
+I0605 12:00:16.860569       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-2ff28" candidate="worker-930" candidateCost=15 currentCost=15
+I0605 12:00:16.860579       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-2ff28" candidate="worker-235" candidateCost=15 currentCost=15
+I0605 12:00:16.860590       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-2ff28" candidate="worker-481" candidateCost=15 currentCost=15
+I0605 12:00:16.860603       1 networkcost.go:222] "Enough better candidates, allowing eviction" pod="test-app/payment-7ddbcc8745-2ff28" betterCount=4 betterCandidates=["worker-861","worker-930","worker-235","worker-481"] minRequired=3 totalCandidates=4 currentCost=15
+I0605 12:00:16.969982       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-2ff28" reason="" strategy="LowNodeUtilization" node="worker-585" profile="low-l1-topo"
+I0605 12:00:16.970043       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-2ff28"
+I0605 12:00:16.970057       1 nodeutilization.go:356] "Updated node usage" node="worker-585" CPU=955 Mem=480247808 Pods=7
+I0605 12:00:16.970167       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-drn82" node="worker-235"
+I0605 12:00:16.970165       1 node.go:189] "Pod does not fit on node" pod="test-app/payment-7ddbcc8745-drn82" node="worker-286" err="node is not schedulable"
+I0605 12:00:16.970184       1 networkcost_evictor.go:131] "NetworkCostEvictor PreEvictionFilter called" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-drn82" node="worker-585"
+I0605 12:00:16.970193       1 networkcost_evictor.go:147] "Pod has network-group label" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-drn82" group="checkout-flow"
+I0605 12:00:16.970229       1 networkcost.go:159] "ShouldAllowEviction: evaluating pod" pod="test-app/payment-7ddbcc8745-drn82" group="checkout-flow" candidateNodes=7
+I0605 12:00:16.970241       1 networkcost.go:165] "Filtering out unschedulable candidate" node="worker-286"
+I0605 12:00:16.970249       1 networkcost.go:165] "Filtering out unschedulable candidate" node="controlplane"
+I0605 12:00:16.970255       1 networkcost.go:170] "ShouldAllowEviction: filtered candidates" pod="test-app/payment-7ddbcc8745-drn82" total=7 schedulable=5
+I0605 12:00:16.970299       1 networkcost.go:109] "FindDependencyPods result" pod="test-app/payment-7ddbcc8745-drn82" group="checkout-flow" depCount=3 nodesScanned=7 excludeSameOwner=true
+I0605 12:00:16.970310       1 networkcost.go:178] "ShouldAllowEviction: found dependency pods" pod="test-app/payment-7ddbcc8745-drn82" depCount=3
+I0605 12:00:16.970324       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-drn82" candidate="worker-235" candidateCost=15 currentCost=15
+I0605 12:00:16.970339       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-drn82" candidate="worker-481" candidateCost=15 currentCost=15
+I0605 12:00:16.970350       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-drn82" candidate="worker-861" candidateCost=0 currentCost=15
+I0605 12:00:16.970363       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-drn82" candidate="worker-930" candidateCost=15 currentCost=15
+I0605 12:00:16.970374       1 networkcost.go:222] "Enough better candidates, allowing eviction" pod="test-app/payment-7ddbcc8745-drn82" betterCount=4 betterCandidates=["worker-235","worker-481","worker-861","worker-930"] minRequired=3 totalCandidates=4 currentCost=15
+I0605 12:00:17.073346       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-drn82" reason="" strategy="LowNodeUtilization" node="worker-585" profile="low-l1-topo"
+I0605 12:00:17.073418       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-drn82"
+I0605 12:00:17.073444       1 nodeutilization.go:356] "Updated node usage" node="worker-585" CPU=705 Mem=413138944 Pods=6
+I0605 12:00:17.073462       1 nodeutilization.go:194] "Evicting pods from node" node="worker-235" usage={"cpu":"1105m","memory":"322Mi","pods":"7"}
+I0605 12:00:17.073510       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-system/kube-proxy-4zksd" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 12:00:17.073534       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="monitoring/goldpinger-24mxm" checks="daemonset pods are protected against eviction"
+I0605 12:00:17.073568       1 defaultevictor.go:497] "Pod fails the following checks" plugin="DefaultEvictor" ExtensionPoint="Filter" pod="kube-flannel/kube-flannel-ds-ltk6x" checks="[pod has system critical priority and is protected against eviction, pod has higher priority than specified priority class threshold, pod has local storage and is protected against eviction, daemonset pods are protected against eviction]"
+I0605 12:00:17.073588       1 nodeutilization.go:201] "Pods on node" node="worker-235" allPods=7 nonRemovablePods=3 removablePods=4
+I0605 12:00:17.073606       1 nodeutilization.go:217] "Evicting pods based on priority, if they have same priority, they'll be evicted based on QoS tiers"
+I0605 12:00:17.073718       1 node.go:185] "Pod fits on node" pod="test-app/payment-7ddbcc8745-8xwjz" node="worker-930"
+I0605 12:00:17.073739       1 networkcost_evictor.go:131] "NetworkCostEvictor PreEvictionFilter called" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-8xwjz" node="worker-235"
+I0605 12:00:17.073752       1 networkcost_evictor.go:147] "Pod has network-group label" plugin="NetworkCostEvictor" pod="test-app/payment-7ddbcc8745-8xwjz" group="checkout-flow"
+I0605 12:00:17.073769       1 networkcost.go:159] "ShouldAllowEviction: evaluating pod" pod="test-app/payment-7ddbcc8745-8xwjz" group="checkout-flow" candidateNodes=7
+I0605 12:00:17.073784       1 networkcost.go:165] "Filtering out unschedulable candidate" node="worker-286"
+I0605 12:00:17.073793       1 networkcost.go:165] "Filtering out unschedulable candidate" node="controlplane"
+I0605 12:00:17.073807       1 networkcost.go:170] "ShouldAllowEviction: filtered candidates" pod="test-app/payment-7ddbcc8745-8xwjz" total=7 schedulable=5
+I0605 12:00:17.073858       1 networkcost.go:109] "FindDependencyPods result" pod="test-app/payment-7ddbcc8745-8xwjz" group="checkout-flow" depCount=3 nodesScanned=7 excludeSameOwner=true
+I0605 12:00:17.073874       1 networkcost.go:178] "ShouldAllowEviction: found dependency pods" pod="test-app/payment-7ddbcc8745-8xwjz" depCount=3
+I0605 12:00:17.073892       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-8xwjz" candidate="worker-481" candidateCost=15 currentCost=15
+I0605 12:00:17.073911       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-8xwjz" candidate="worker-585" candidateCost=15 currentCost=15
+I0605 12:00:17.073921       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-8xwjz" candidate="worker-861" candidateCost=0 currentCost=15
+I0605 12:00:17.073929       1 networkcost.go:201] "Found better or equal candidate" pod="test-app/payment-7ddbcc8745-8xwjz" candidate="worker-930" candidateCost=15 currentCost=15
+I0605 12:00:17.073940       1 networkcost.go:222] "Enough better candidates, allowing eviction" pod="test-app/payment-7ddbcc8745-8xwjz" betterCount=4 betterCandidates=["worker-481","worker-585","worker-861","worker-930"] minRequired=3 totalCandidates=4 currentCost=15
+I0605 12:00:17.176262       1 evictions.go:558] "Evicted pod" pod="test-app/payment-7ddbcc8745-8xwjz" reason="" strategy="LowNodeUtilization" node="worker-235" profile="low-l1-topo"
+I0605 12:00:17.176325       1 nodeutilization.go:347] "Evicted pods" pod="test-app/payment-7ddbcc8745-8xwjz"
+I0605 12:00:17.176337       1 nodeutilization.go:356] "Updated node usage" node="worker-235" CPU=855 Mem=270532608 Pods=6
+I0605 12:00:17.176414       1 profile.go:425] "Total number of evictions/requests" extension point="Balance" evictedPods=3 evictionRequests=0
+I0605 12:00:17.176446       1 descheduler.go:252] "Number of evictions/requests" totalEvicted=3 evictionRequests=0
+E0605 12:00:17.176711       1 event_broadcaster.go:279] "Unable to write event (may retry after sleeping)" err="client rate limiter Wait returned an error: context canceled"
+I0605 12:00:17.176829       1 reflector.go:373] "Stopping reflector" type="*v1.Pod" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:17.176986       1 reflector.go:373] "Stopping reflector" type="*v1.PersistentVolumeClaim" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:17.177081       1 reflector.go:373] "Stopping reflector" type="*v1.Node" resyncPeriod="0s" reflector="k8s.io/client-go/informers/factory.go:161"
+I0605 12:00:17.177630       1 tlsconfig.go:258] "Shutting down DynamicServingCertificateController"
+I0605 12:00:17.177732       1 secure_serving.go:259] Stopped listening on [::]:10258

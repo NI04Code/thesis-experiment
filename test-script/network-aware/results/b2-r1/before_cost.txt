@@ -1,0 +1,4 @@
+pairs=8 total_cost=13.814ms avg=1.727ms
+  db: 1 pods on ['worker-861']
+  payment: 2 pods on ['worker-235', 'worker-585']
+  transaction: 2 pods on ['worker-861']

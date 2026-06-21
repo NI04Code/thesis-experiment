@@ -1,0 +1,19 @@
+NAME                            READY   STATUS    RESTARTS   AGE   IP             NODE         NOMINATED NODE   READINESS GATES
+payment-55755dffd-z98lp         1/1     Running   0          68s   10.244.2.235   worker-235   <none>           <none>
+filler-source-6bbdc8c65-vzbkh   1/1     Running   0          49s   10.244.5.173   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-5dmbh     1/1     Running   0          84s   10.244.5.171   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-7jnsg     1/1     Running   0          83s   10.244.5.169   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-dr4nm     1/1     Running   0          84s   10.244.5.167   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-lkwm2     1/1     Running   0          84s   10.244.5.166   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-ndgzm     1/1     Running   0          84s   10.244.5.170   worker-481   <none>           <none>
+filler-481-5bfb4f8cb6-sj8gq     1/1     Running   0          84s   10.244.5.168   worker-481   <none>           <none>
+payment-55755dffd-8wgns         1/1     Running   0          68s   10.244.1.32    worker-585   <none>           <none>
+transaction-64c84b7df7-z9vrf    1/1     Running   0          99s   10.244.3.119   worker-861   <none>           <none>
+db-768dc78d4b-phsnt             1/1     Running   0          99s   10.244.3.118   worker-861   <none>           <none>
+transaction-64c84b7df7-qts4v    1/1     Running   0          99s   10.244.3.120   worker-861   <none>           <none>
+filler-930-598f9b76d8-6wmmc     1/1     Running   0          83s   10.244.4.170   worker-930   <none>           <none>
+filler-source-6bbdc8c65-9ljpd   1/1     Running   0          49s   10.244.4.173   worker-930   <none>           <none>
+filler-930-598f9b76d8-nxfk6     1/1     Running   0          83s   10.244.4.168   worker-930   <none>           <none>
+filler-930-598f9b76d8-mtl9c     1/1     Running   0          83s   10.244.4.171   worker-930   <none>           <none>
+filler-930-598f9b76d8-ltbgr     1/1     Running   0          83s   10.244.4.172   worker-930   <none>           <none>
+filler-930-598f9b76d8-4bbtb     1/1     Running   0          84s   10.244.4.169   worker-930   <none>           <none>

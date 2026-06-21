@@ -1,0 +1,12 @@
+NAME                           APP           NODE
+db-768dc78d4b-rvhsf            db            worker-861
+payment-7ddbcc8745-5vdl5       payment       worker-585
+payment-7ddbcc8745-9x8nn       payment       worker-585
+payment-7ddbcc8745-f8wt4       payment       worker-235
+payment-7ddbcc8745-g2rfs       payment       worker-585
+payment-7ddbcc8745-gsk56       payment       worker-235
+payment-7ddbcc8745-j2dt4       payment       worker-235
+payment-7ddbcc8745-jdhrm       payment       worker-585
+payment-7ddbcc8745-wnq72       payment       worker-235
+transaction-64c84b7df7-bx6lq   transaction   worker-861
+transaction-64c84b7df7-wtx6m   transaction   worker-861

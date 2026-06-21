@@ -1,0 +1,6 @@
+NAME                           APP           NODE
+db-768dc78d4b-xckdf            db            worker-861
+payment-55755dffd-n8mfj        payment       worker-235
+payment-55755dffd-s8rnq        payment       worker-585
+transaction-64c84b7df7-7qpjp   transaction   worker-861
+transaction-64c84b7df7-d7md4   transaction   worker-861

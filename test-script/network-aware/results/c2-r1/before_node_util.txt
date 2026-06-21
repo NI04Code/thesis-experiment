@@ -1,0 +1,12 @@
+NODE              CPU_REQ  CPU_ALLOC   CPU%  MEM_REQ  MEM_ALLOC   MEM%  WORKLOAD  LOCATION
+worker-235         1705m      2000m   85.2%    216Mi      811Mi  26.6%    active  (us-east-1/us-east-1d)
+worker-481          206m      2000m   10.3%    670Mi      811Mi  82.6%    active  (us-east-1/us-east-1a)
+worker-585         1805m      2000m   90.2%    416Mi      811Mi  51.3%    active  (us-east-1/us-east-1d)
+worker-861         1505m      2000m   75.2%    516Mi      811Mi  63.6%    active  (us-east-1/us-east-1b)
+worker-930          206m      2000m   10.3%    670Mi      811Mi  82.6%    active  (us-east-1/us-east-1a)
+
+Defragmentation (all nodes, N=5):
+  CPU:    mean=54.3%  cpu_stddev=36.2%
+  Memory: mean=61.3%  mem_stddev=21.0%
+  Stranding Score: total_rii=253.817
+  ActiveNodes=5 (nodes with non-DaemonSet workload requests)

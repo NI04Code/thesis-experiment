@@ -1,0 +1,7 @@
+Error querying Prometheus: [Errno 104] Connection reset by peer
+WARNING: Prometheus query returned 0 metrics!
+  Warning: No latency data found for pair (worker-861 -> worker-585)
+  Warning: No latency data found for pair (worker-861 -> worker-235)
+pairs=0 total_cost=0.000ms avg=0.000ms
+  db: 1 pods on ['worker-861']
+  payment: 2 pods on ['worker-235', 'worker-585']

@@ -1,0 +1,12 @@
+NAME                          READY   STATUS    RESTARTS   AGE   IP             NODE         NOMINATED NODE   READINESS GATES
+filler-cpu-7dc65b6bf5-67td4   1/1     Running   0          82s   10.244.2.52    worker-235   <none>           <none>
+filler-cpu-7dc65b6bf5-ccg44   1/1     Running   0          49s   10.244.2.55    worker-235   <none>           <none>
+filler-mem-84d9589cf9-22gdv   1/1     Running   0          49s   10.244.2.54    worker-235   <none>           <none>
+filler-mem-84d9589cf9-x5ffd   1/1     Running   0          49s   10.244.2.56    worker-235   <none>           <none>
+filler-mem-84d9589cf9-2w8bj   1/1     Running   0          48s   10.244.5.11    worker-481   <none>           <none>
+payment-64454f6d9f-t8zph      1/1     Running   0          49s   10.244.5.10    worker-481   <none>           <none>
+filler-cpu-7dc65b6bf5-hbqfn   1/1     Running   0          82s   10.244.1.104   worker-585   <none>           <none>
+filler-cpu-7dc65b6bf5-ml9sj   1/1     Running   0          49s   10.244.1.108   worker-585   <none>           <none>
+filler-mem-84d9589cf9-8nwgj   1/1     Running   0          49s   10.244.1.107   worker-585   <none>           <none>
+db-7d9b44bc44-8plvn           1/1     Running   0          92s   10.244.3.156   worker-861   <none>           <none>
+payment-64454f6d9f-n8q92      1/1     Running   0          49s   10.244.4.241   worker-930   <none>           <none>
