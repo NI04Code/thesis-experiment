@@ -100,50 +100,35 @@ test-script/
     lownodeutilization/
     shared/
     results/
+  network-aware/
+    results/
   resource-defragmentation/
-  run-session*.sh
 ```
 
 - `test-script/actual-usage-evictor/` is the current actual-usage experiment suite. It separates the three strategies into Resource Defragmentation (R), HighNodeUtilization (H), and LowNodeUtilization (L), with common workload, k6, Kubernetes manifests, and utility scripts under `shared/`.
+- `test-script/network-aware/` is the network-aware experiment suite using generated configs to evaluate LowNodeUtilization (L), HighNodeUtilization (H), and Resource Defragmentation (R).
 - `test-script/resource-defragmentation/` is the standalone Resource Defragmentation comparison suite from the earlier experiment flow.
-- The root-level `test-script/run-session*.sh` scripts are the older session-based tests that use generated configs.
 
 ### 9. Deploy Descheduler Service Account
 Apply the default Kubernetes Descheduler ServiceAccount and ClusterRole.
 **Crucial Step:** You must edit the `ClusterRole` permissions for the descheduler to explicitly allow reading `PersistentVolumeClaims` (`pvc`), as the defragmentation and predictive target logic requires it.
 
-### 10. Generate Policy Configurations
-Run the Python config generator to build the descheduler policy manifests needed for the tests.
+## Network Aware Suite
+
+The network-aware suite lives in `test-script/network-aware/`. Run commands from that directory:
+
 ```bash
-python3 test-script/generate_configs.py
+cd test-script/network-aware
 ```
-*(You can modify the configurations directly within `generate_configs.py` before running it).*
 
-### 11. Execute Legacy Test Sessions
-Use the root-level scripts to evaluate the original generated-config scenarios. Each script resets the cluster state, populates the workloads, and triggers the descheduler.
+It contains the scenarios evaluating network-aware policies with generated configurations:
 
-* **LowNodeUtilization Test**: 
-  ```bash
-  bash test-script/run-session1.sh
-  ```
-  *(To run the "No Filler" strict tradeoff test, edit `run-session1.sh` and change its source file from `reset-low.sh` to `reset-low-nofiller.sh`).*
-
-* **HighNodeUtilization Test**:
-  ```bash
-  bash test-script/run-session2.sh
-  ```
-
-* **ResourceDefragmentation Test**:
-  ```bash
-  bash test-script/run-session3.sh
-  ```
-
-### 12. Wait and Analyze Results
-Wait for the descheduling pass to complete and workloads to stabilize, then run the analyzer script to compute evaluation metrics:
-```bash
-bash test-script/analyze.sh
-```
-The table output will display the Evicted Pod Count, Standard Deviation changes, Stranding Score changes, and Average Latency Degradation across the cluster.
+- `generate_configs.py`: Python config generator to build the descheduler policy manifests.
+- `run-session1.sh`: LowNodeUtilization Test (edit to `reset-low-nofiller.sh` for strict tradeoff).
+- `run-session2.sh`: HighNodeUtilization Test.
+- `run-session3.sh`: ResourceDefragmentation Test.
+- `analyze.sh`: Computes evaluation metrics (Evictions, StdDev, Stranding Score, Latency).
+- `results/`: Directory containing a folder for each test scenario, which in turn holds the raw logs and metric data.
 
 ---
 
